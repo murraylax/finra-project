@@ -1,0 +1,303 @@
+---
+title: "National Financial Capability Study - 2015"
+subtitle: "R Dataset Codebook"
+output: pdf_document
+urlcolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# About the Data 
+
+The National Financial Capability Study is performed by the FINRA (Financial Industry Regulatory Authority) Investor Education Foundation. The study includes a survey on financial behaviors and financial literacy. The survey was administered in 2009, 2012, and 2015. The 2015 study includes responses by more than 27,000 individuals from every demographic group across the United States.
+
+See http://www.usfinancialcapability.org for more information about the study.
+
+The 2015 survey can be found here:
+
+http://www.usfinancialcapability.org/downloads/NFCS_2015_State_by_State_Qre.pdf
+
+The data set described in this document is a sample of the full data set. It includes many, but not all, of the variables, and a fraction of the total observations. The data set has been transformed from the original so it is more convenient to use and manipulate in R.
+
+# Loading the Data 
+
+The following command loads a sample of the National Financial Capability Study 2015 survey responses. The data has been cleaned, coded, and stored in an R data frame called `df`. 
+
+```{r, eval=FALSE, echo=TRUE}
+load("findata.RData")
+```
+
+# Variable Descriptions 
+
+## Demographic Variables 
+
+* `State`: Two letter code for U.S. State
+
+* `Age`: Ordered factor, age category of respondent
+
+* `Female`: Binary, equal to 1 if respondent is female, 0 if male
+
+* `RaceWhite`: Binary, equal to 1 if respondent if white, 0 otherwise
+
+* `Edu`: Ordered factor, respondent's level of education
+
+* `College4Degree`: Binary, equal to 1 if respondent has a four-year college degree, 0 otherwise
+
+* `MaritalStatus`: Factor, respondent's marital status
+
+* `LivingSituation`: Factor, respondent's living situation, such as living alone, with a partner, or with roommates
+
+* `NumFinDepChildren`: Numeric, number of financial dependent children, including adult children. Value equal to 4 refers to response, "four or more."
+
+* `FourMoreFinDepChildren`: Binary, equal to 1 if the number of financial dependent children is equal to four or more.
+
+* `Military`: Binary, equal to 1 if the respondent is currently or was ever in any of the U.S. armed forces
+
+* `Employment`: Factor, employment status, including self-employed, full time, part time, unemployed, and not in the labor force
+
+* `SpouseMilitary`: Binary, equal to 1 if the respondent's spouse is currently or was ever in any of the U.S. armed forces
+
+* `SpouseEmployment`: Factor, spouse's employment status, including self-employed, full time, part time, unemployed, and not in the labor force
+
+## Financial Status Variables 
+
+* `IncomeCat`: Ordered factor, respondent's income category
+
+* `Income150K`: Binary, equal to 1 if income is more than \$150,000
+
+* `IncomeApprox`: Numeric, approximate income equal to the median of the selected income category, or \$150,000 in the case of the final category, "more than $150,000"
+
+* `LaborIncome`: Binary, equal to 1 if the respondent or spouse received income from labor in the last year
+
+* `BusinessIncome`: Binary, equal to 1 if the respondent or spouse received business income in the last year
+
+* `OwnHome`: Binary, equal to 1 if the respondent owns their home
+
+* `MostKnowledgeable`: Factor, who in the household is most knowledgeable about saving, investing, and debt
+
+* `KnowledgeableBin`: Binary, equal to 1 if the person identified themselves as the most knowledgeable, or equal in knowledge to another, in the household about saving, investing, and debt
+
+* `FinSat`: Numeric, level of financial satisfaction on a scale of 1-10, where 1 is "not at all satisfied"" and 10 is "extremely satisfied"
+
+* `RiskTaking`: Numeric, level of willingness to take risks in financial investments, one a scale of 1-10, where 1 is "not at all willing" and 10 is "very willing"
+
+* `SpendingIncome`: Factor, description of how respondent's income compared to their spending of the last year
+
+* `NegativeSavingBin`: Binary, equal to 1 if over the last year the respondent has negative saving, that is when their spending is greater than their income
+
+* `PositiveSavingBin`: Binary, equal to 1 if over the last year the respondent has positive saving, that is when their spending is less than their income
+
+* `HandMouth`: Binary, equal to 1 if over the last year the respondent's income is equal to their saving
+
+* `FinDifficulty`: Ordered factor, level of financial difficulty the person has meeting their expenses in a typical month
+
+* `DifficultyBin`: Binary, equal to 1 if respondent has at least some difficulty meeting their expenses in a typical month
+
+* `EmergencyFund`: Binary, equal to 1 if respondent has set aside funds to cover three months of expenses in case of an emergency
+
+* `ComeUp2K`: Ordered factor, level of confidence that a respondent could come up with \$2,000 in the event of an unexpected expense
+
+* `ComeUp2KBin:` Binary, equal to 1 if respondent is at least somewhat confident that they could come up with \$2,000 in the event of an unexpected expense
+
+* `DropIncome`: Binary, equal to 1 if the respondent experienced a large unexpected drop in income during the last year
+
+## Financial Behavior Variables
+
+* `KidsCollege`: Binary, equal to 1 if respondent is setting aside money for their children's college education
+
+* `FiguredRetirement`: Binary, equal to 1 if respondent figured out how much they want to save for retirement
+
+* `BudgetBin`: Binary, equal to 1 if respondent plans a monthly budget
+
+* `BudgetTimePeriod`: Ordered factor, upcoming length of time that respondent considers when making a budget
+
+* `CreditRecord`: Ordered factor, respondent's perception of the quality of their credit record
+
+* `RetirementWorry`: Numeric, scale of 1-7, level of agreement on statement, "I worry about running out of money in retirement," where 1 is "strongly disagree" and 7 is "strongly agree." Larger numbers therefore denote greater worry.
+
+* `LongTermPlan`: Numeric, scale of 1-7, level of agreement on statement, "I set financial goals and try to achieve them," where 1 is "strongly disagree" and 7 is "strongly agree." Larger numbers therefore denote greater degree of planning.
+
+* `CheckingOverdrawBin`: Binary, equal to 1 if respondent or their spouse overdraws their checking account on occasion
+
+* `DebtCollect`: Binary, equal to 1 if the respondent had been contacted by a debt collection agency in the last year
+
+## Financial Accounts and Services Variables 
+
+* `CheckingAcctBin`: Binary, equal to 1 if respondent has a checking account
+
+* `SavingAcctBin`: Binary, equal to 1 if respondent has a saving account, certificate of deposit, or money market mutual fund
+
+* `UsePrepaidCard`: Ordered factor, description of how often respondent uses a prepaid debit card for usual bills or expenses
+
+* `EmployerRetire`: Binary, equal to 1 if respondent has a retirement account through their employer
+
+* `OtherRetire`: Binary, equal to 1 if respondent has requirement accounts other than what may be provided by their employer
+
+* `HaveAnyRetire`: Binary, equal to 1 if respondent has a retirement account through either their employer or from outside their employer
+
+* `RetireContribute`: Binary, equal to 1 if respondent regularly contributes to any of their retirement accounts
+
+* `RetireLoan`: Binary, equal to 1 if the respondent took out a loan against their retirement at least once in the last year
+
+* `RetireHardshipWithdraw`: Binary, equal to 1 if in the last year the respondent withdrew some of their retirement funds early due to financial hardship
+
+* `FinInv`: Binary, equal to 1 if respondent has financial investments such as stocks, bonds, or mutual funds
+
+* `HomeDownPmt` Numeric, between 0 and 100, size of down payment on home as a percentage of purchase price 
+
+* `MortgageBin`: Binary, equal to 1 if respondent has a mortgage
+
+* `EquityLoanBin`: Binary, equal to 1 if respondent has any home equity loans
+
+* `HomeUnderWater`: Binary, equal to 1 if respondent owes more on their home than they could sell it for
+
+* `LateMortgage`: Ordered factor, how often in the last year the respondent was late on their mortgage payment
+
+* `NumCreditCards`: Ordered factor, in interval categories, the number of credit cards the respondent has
+
+* `PaidCreditCardFull`: Binary, equal to 1 if respondent always pays their credit card in full
+
+* `CreditCardCarry`: Binary, equal to 1 if respondent carried a balance on their credit in some months of the last year
+
+* `CreditCardMinPmt`: Binary, equal to 1 if respondent paid only the minimum payment on their credit card in some months of the last year
+
+* `CreditCardLatePenalty`: Binary, equal to 1 if respondent was charged a late payment penalty on their credit card in some months of the last year
+
+* `CreditCardOverLimit`: Binary, equal to 1 if respondent was over their credit card limit in some months of the last year
+
+* `CreditCardCashAdv`: Binary, equal to 1 if respondent received a cash advance on their credit card in some months of the last year
+
+* `AutoLoanBin`: Binary, equal to 1 if respondent has an auto loan
+
+* `UnpaidMedical`: Binary, equal to 1 if respondent had any outstanding unpaid medical bills
+
+* `TooMuchDebt` Numeric, scale 1-7, how much respondent agrees with the statement, "I have too much debt," where 1 is "strongly disagree" and 7 is "strongly agree"
+
+* `TooMuchDebtBin`: Binary, equal to 1 if respondent agreed with the statement, "I have too much debt"
+
+## Student Loans 
+
+* `StudentLoans`: Binary, equal to 1 if respondent has any student loans
+
+* `FederalStudentLoans`: Binary, equal to 1 if respondent has any *federal* student loans
+
+* `PrivateStudentLoans`: Binary, equal to 1 if respondent has any *private* student loans
+
+* `StudentLoanFigurePmts`: Binary, equal to 1 if respondent figured out what their monthly loan repayments would be when they took out student loans
+
+* `CompleteEdu`: Binary, equal to 1 if respondent completed the degree for which they received student loans, missing value for respondents still completing their degree
+
+* `StudentLoanLate`: Ordered factor, how often in the last year respondent was late with a student loan repayment
+
+* `StudentLoanConcern`: Binary, equal to 1 if respondent is concerned they may not be able to repay their student loans
+
+* `StudentLoanDoOver`: Factor, if the respondent was able to make different decisions regarding their student loan, would they take the same actions or different actions
+
+## Financial Literacy 
+
+* `GoodFinance`: Numeric, scale 1-7, level of agreement with the statement, "I am good at dealing with day-to-day financial matters..." where 1 is "Strongly disagree" and 7 is "Strongly Agree"
+
+* `GoodFinanceBin`: Binary, equal to 1 if person agreed with the statement "I am good at dealing with day-to-day financial matters"
+
+* `GoodMath`: Numeric, scale 1-7, level of agreement with the statement, "I am pretty good at math," where 1 is "Strongly disagree" and 7 is "Strongly Agree"
+
+* `GoodMathBin`: Binary, equal to 1 if person agreed with the statement, "I am pretty good at math"
+
+* `FinancialKnow`: Numeric, scale 1-7, level of respondent's perceived overall financial knowledge, where 1 is "Very low" and 7 is "Very high"
+
+* `FinancialKnowBin`: Binary, equal to 1 if level of respondent's perceived overall financial knowledge is at least somewhat high
+
+* `FinEdu`: Binary, equal to 1 if respondent ever received financial education through school, place of employment, or military
+
+* `ParentFinEdu`: Binary, equal to 1 if respondent's parents taught them how to manage their finances
+
+* `AnyFinEdu`: Binary, equal to 1 if respondent received any kind of financial education, whether formal education through school, place of employment, or military, or informal training from a parent
+
+* `QuestionM6`: Answer to quiz question M6 on financial facts.
+
+    * M6. Suppose you had $100 in a savings account and the interest rate was 2% per year. After 5 years, how much do you think you would have in the account if you left the money to grow?
+    
+        * *More than $102* (Correct answer)
+        
+        * Exactly $102
+        
+        * Less than $102 
+        
+        * Don’t know 
+
+* `QuestionM6Correct`: Binary, equal to 1 if respondent answered question M6 correctly
+
+* `Question M7`: Answer to quiz question M7 on financial facts.
+
+    * M7. Imagine that the interest rate on your savings account was 1% per year and inflation was 2% per year.
+    
+        * After 1 year, how much would you be able to buy with the money in this account?
+        * More than today
+        
+        * Exactly the same 
+        
+        * *Less than today* (Correct answer) 
+        
+        * Don’t know 
+
+* `QuestionM7Correct`: Binary, equal to 1 if respondent answered question M7 correctly
+
+* `QuestionM8`: Answer to quiz question M8 on financial facts.
+
+    * M8. If interest rates rise, what will typically happen to bond prices?
+    
+         * They will rise
+         
+         * *They will fall* (Correct answer)
+         
+         * They will stay the same
+         
+         * There is no relationship between bond prices and the interest rate
+         
+         * Don’t know 
+
+* `QuestionM8Correct`: Binary, equal to 1 if respondent answered question M8 correctly
+
+* `QuestionM9`: Answer to quiz question M9 on financial facts
+
+    * M9. A 15-year mortgage typically requires higher monthly payments than a 30-year mortgage, but the total interest paid over the life of the loan will be less. 
+    
+        * *True* (Correct answer)
+        
+        * False
+        
+        * Don't know
+
+* `QuestionM9Correct`: Binary, equal to 1 if respondent answered question M9 correctly
+
+* `QuestionM10`: Answer to quiz question M10 on financial facts
+
+    * M10. Buying a single company’s stock usually provides a safer return than a stock mutual fund. 
+    
+        * True
+        
+        * *False* (Correct answer)
+        
+        * Don't know
+
+* `QuestionM10Correct`: Binary, equal to 1 if respondent answered question M10 correctly
+
+* `QuestionM31`: Answer to question M31 on financial facts
+
+    * M31. Suppose you owe $1,000 on a loan and the interest rate you are charged is 20% per year compounded annually. If you didn’t pay anything off, at this interest rate, how many years would it take for the amount you owe to double?
+    
+        * Less than 2 years
+        
+        * *At least 2 years but less than 5 years* (Correct answer)
+        
+        * At least 5 years but less than 10 years
+
+        * At least 10 years
+
+        * Don’t know
+
+* `QuestionM31Correct`: Binary, equal to 1 if respondent answered question M31 correctly
+
+* `QuizScore`: Numeric, 0-6, number of above quiz questions correct out of 6
